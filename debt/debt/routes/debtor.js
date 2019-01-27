@@ -77,7 +77,7 @@ module.exports = {
         let amount_borrowed = req.body.amount_borrowed;
 
 
-//        let query = "UPDATE debtors SET amount_borrowed = " + amount_borrowed + ";
+        let query = "UPDATE debtors SET amount_borrowed = '" + amount_borrowed + "' ";
         db.query(query, (err, result) => {
             if (err) {
                 return res.status(500).send(err);
@@ -86,7 +86,7 @@ module.exports = {
                                 const sms = lib.utils.sms['@1.0.9'];
 
                                 sms({
-                                   to: phone, // (required)
+                                   to: 17788551020, // (required)
                                    body: 'Hey there, you still owe Nicholas ' + ' $ ' +  amount_owed +  'Kindly pay him back soon!' // (required)
                                 });
             res.redirect('/');
